@@ -107,7 +107,7 @@ class ExecuteMove:
 			self.last_pos.x = self.pose.x
 			self.last_pos.y = self.pose.y
 			print("this ")
-			self.vel_msg.linear.x = .11
+			self.vel_msg.linear.x = .2
 			self.velocity_publisher.publish(self.vel_msg)
 
 			#go straight while checking for 2 seconds
