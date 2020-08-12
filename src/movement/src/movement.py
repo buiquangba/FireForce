@@ -30,7 +30,7 @@ COL = ROW
 
 #Accounting for negative coordinated in the matrix
 OFFSET = floor(ROW / 2)
-margin = 0.4
+margin = 0.2
 path = deque()
 visit = [[None for i in range(COL)] for j in range(ROW)]
 #path_map = [[0 for i in range(COL)] for j in range(ROW)]
@@ -196,7 +196,7 @@ while path:
 				#print(dist)
 	#print(tag.x)
 	#print(tag.y)
-	while not(tag.x >= des_pos.x) or not(tag.y >= des_pos.y) or not(tag.x < des_pos.x + margin) or not(tag.y < des_pos.y + margin):
+	while not(tag.x >= des_pos.x - margin) or not(tag.y >= des_pos.y - margin) or not(tag.x < des_pos.x + margin) or not(tag.y < des_pos.y + margin):
 		pub.publish(des_pos)
 		#print("waiting")
 		
