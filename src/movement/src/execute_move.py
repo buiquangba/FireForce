@@ -111,7 +111,7 @@ class ExecuteMove:
 			self.velocity_publisher.publish(self.vel_msg)
 
 			#go straight while checking for 2 seconds
-		turn_time = 1
+		turn_time = 4
 		self.rate = rospy.Rate(10)
 		while(turn_time > 0 and self.stop == False):
 			#print("straight loopy")
