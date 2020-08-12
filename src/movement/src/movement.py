@@ -25,7 +25,7 @@ from collections import deque
 GRID_TRANSFORM = 2
 
 #Size of path matrix
-ROW = 23
+ROW = 31
 COL = ROW
 
 #Accounting for negative coordinated in the matrix
@@ -187,7 +187,7 @@ while path:
 			#print("At x =", tag.x, ", y =", tag.y, ", z =", tag.z)
 			dist = depth_frame.get_distance(x, y)
 			#print(dist)
-			if (dist < 2.0) and (dist >= 1.0):
+			if (dist < 1.0) and (dist >= 0.5):
 				#Start path finding and send to gotopos with headings and change map grid
 				#to include found objects
 				BFS(map1,temp_point,dest)
