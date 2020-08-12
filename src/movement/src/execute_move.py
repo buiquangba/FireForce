@@ -107,11 +107,11 @@ class ExecuteMove:
 			self.last_pos.x = self.pose.x
 			self.last_pos.y = self.pose.y
 			print("this ")
-			self.vel_msg.linear.x = .2
+			self.vel_msg.linear.x = .11
 			self.velocity_publisher.publish(self.vel_msg)
 
 			#go straight while checking for 2 seconds
-		turn_time = 4
+		turn_time = 2
 		self.rate = rospy.Rate(10)
 		while(turn_time > 0 and self.stop == False):
 			#print("straight loopy")
@@ -193,7 +193,7 @@ class ExecuteMove:
 				self.vel_msg.angular.z = 0
 				self.velocity_publisher.publish(self.vel_msg)
 				#raw_input("yeet")
-				self.vel_msg.linear.x = .2
+				self.vel_msg.linear.x = .11
 				self.velocity_publisher.publish(self.vel_msg)
 				
 
