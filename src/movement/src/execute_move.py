@@ -193,7 +193,7 @@ class ExecuteMove:
 				self.vel_msg.angular.z = 0
 				self.velocity_publisher.publish(self.vel_msg)
 				#raw_input("yeet")
-				self.vel_msg.linear.x = .11
+				self.vel_msg.linear.x = .2
 				self.velocity_publisher.publish(self.vel_msg)
 				
 
