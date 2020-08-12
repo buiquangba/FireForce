@@ -58,7 +58,7 @@ class ExecuteMove:
 		self.turn_angle = 0.000
 		self.ang_vel = 2
 		self.stop = True
-		self.margin = .2
+		self.margin = .4
 		self.last_pos = Vector3()
 		self.rate = rospy.Rate(1)
 		self.rate.sleep()
