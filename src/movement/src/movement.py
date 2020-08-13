@@ -22,7 +22,7 @@ from math import pow, atan2, sqrt, acos, pi, sin, cos, floor
 from array import *
 from collections import deque
 
-GRID_TRANSFORM = 2
+GRID_TRANSFORM = 3
 
 #Size of path matrix
 ROW = 23
