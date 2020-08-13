@@ -25,7 +25,7 @@ from collections import deque
 GRID_TRANSFORM = 2
 
 #Size of path matrix
-ROW = 22
+ROW = 100
 COL = ROW
 
 #Accounting for negative coordinated in the matrix
@@ -84,12 +84,15 @@ colNum = [0, -1, 1, 0]
 def BFS(mat, src: Point, dest: Point):
 	#path = deque()
 	print("test1") 
-      
+	print(int(src.x*GRID_TRANSFORM))
+	print(int(src.y*GRID_TRANSFORM))
+	print(int(dest.x*GRID_TRANSFORM))
+	print(int(desty.x*GRID_TRANSFORM))
+
 	# check source and destination cell  
 	# of the matrix have value 1  
 	if mat[int(src.x*GRID_TRANSFORM)][int(src.y*GRID_TRANSFORM)]!=1 or mat[int(dest.x*GRID_TRANSFORM)][int(dest.y*GRID_TRANSFORM)]!=1: 
 		return -1
-      
 	visited = [[False for i in range(COL)] for j in range(ROW)]
 
 	# Mark the source cell as visited  
@@ -120,8 +123,8 @@ def BFS(mat, src: Point, dest: Point):
 			while pt.x != src.x or pt.y != src.y:
 
 				for i in range(4): 
-					row = int(pt.x) + rowNum[i] /GRID_TRANSFORM
-					col = int(pt.y) + colNum[i] /GRID_TRANSFORM
+					row = int(pt.x) + rowNum[i]
+					col = int(pt.y) + colNum[i] 
 
 				    # if adjacent cell is valid, has path   
 				    # and not visited yet, enqueue it. 
@@ -138,8 +141,8 @@ def BFS(mat, src: Point, dest: Point):
           
 		# Otherwise enqueue its adjacent cells  
 		for i in range(4): 
-			row = int(pt.x*GRID_TRANSFORM) + rowNum[i] /GRID_TRANSFORM
-			col = int(pt.y*GRID_TRANSFORM) + colNum[i] /GRID_TRANSFORM
+			row = int(pt.x*GRID_TRANSFORM) + rowNum[i]
+			col = int(pt.y*GRID_TRANSFORM) + colNum[i] 
 		      
 			# if adjacent cell is valid, has path   
 			# and not visited yet, enqueue it. 
