@@ -158,7 +158,7 @@ def BFS(mat, src: Point, dest: Point):
 #End Starting main algorithm
 time.sleep(2)
 pub = rospy.Publisher('desired_position', Vector3, queue_size=10)
-dest = Point(4+OFFSET, 4+OFFSET) 
+dest = Point(4, 4) 
 source = Point(float(floor(tag.x)), float(floor(tag.y)))
 des_pos = Vector3(dest.x,dest.y,0)
 start = True
