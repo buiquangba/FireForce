@@ -22,10 +22,10 @@ from math import pow, atan2, sqrt, acos, pi, sin, cos, floor
 from array import *
 from collections import deque
 
-GRID_TRANSFORM = 2
+GRID_TRANSFORM = 1
 
 #Size of path matrix
-ROW = 101
+ROW = 11
 COL = ROW
 
 #Accounting for negative coordinated in the matrix
