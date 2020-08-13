@@ -22,10 +22,10 @@ from math import pow, atan2, sqrt, acos, pi, sin, cos, floor
 from array import *
 from collections import deque
 
-GRID_TRANSFORM = 3
+GRID_TRANSFORM = 1
 
 #Size of path matrix
-ROW = 23
+ROW = 22
 COL = ROW
 
 #Accounting for negative coordinated in the matrix
@@ -146,7 +146,7 @@ def BFS(mat, src: Point, dest: Point):
 			if (isValid(row,col) and mat[row][col] == 1 and not visited[row][col]): 
 				visited[row][col] = True
 				#Modify here when changing grid size
-				Adjcell = queueNode(Point(row/GRID_TRANSFORM,col/GRID_TRANSFORM),curr.dist+1)
+				Adjcell = queueNode(Point(row,col),curr.dist+1)
 				path.append(Adjcell)
 				q.append(Adjcell) 
       
