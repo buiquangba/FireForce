@@ -87,7 +87,7 @@ def BFS(mat, src: Point, dest: Point):
 	print(int(src.x*GRID_TRANSFORM))
 	print(int(src.y*GRID_TRANSFORM))
 	print(int(dest.x*GRID_TRANSFORM))
-	print(int(desty.x*GRID_TRANSFORM))
+	print(int(dest.y*GRID_TRANSFORM))
 
 	# check source and destination cell  
 	# of the matrix have value 1  
