@@ -84,9 +84,9 @@ colNum = [0, -1, 1, 0]
 def BFS(mat, src: Point, dest: Point):
 	#path = deque()
 	print("test1") 
-	print(int(src.x*GRID_TRANSFORM+OFFSET))
+	print(int((src.x*GRID_TRANSFORM)+OFFSET))
 	print(int(src.y*GRID_TRANSFORM+OFFSET))
-	print(int(dest.x*GRID_TRANSFORM+OFFSET))
+	print(int((dest.x*GRID_TRANSFORM)+OFFSET))
 	print(int(dest.y*GRID_TRANSFORM+OFFSET))
 
 	# check source and destination cell  
