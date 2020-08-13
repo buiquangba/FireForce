@@ -149,7 +149,7 @@ def BFS(mat, src: Point, dest: Point):
 			if (isValid(row,col) and mat[row][col] == 1 and not visited[row][col]): 
 				visited[row][col] = True
 				#Modify here when changing grid size
-				Adjcell = queueNode(Point(row,col),curr.dist+1)
+				Adjcell = queueNode(Point((row-OFFSET)/GRID_TRANSFORM,(col-OFFSET)/GRID_TRANSFORM),curr.dist+1)
 				path.append(Adjcell)
 				q.append(Adjcell) 
       
