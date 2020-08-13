@@ -25,7 +25,7 @@ from collections import deque
 GRID_TRANSFORM = 2
 
 #Size of path matrix
-ROW = 31
+ROW = 101
 COL = ROW
 
 #Accounting for negative coordinated in the matrix
