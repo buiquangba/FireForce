@@ -84,19 +84,19 @@ colNum = [0, -1, 1, 0]
 def BFS(mat, src: Point, dest: Point):
 	#path = deque()
 	print("test1") 
-	print(int(src.x*GRID_TRANSFORM))
-	print(int(src.y*GRID_TRANSFORM))
-	print(int(dest.x*GRID_TRANSFORM))
-	print(int(dest.y*GRID_TRANSFORM))
+	print(int(src.x*GRID_TRANSFORM+OFFSET))
+	print(int(src.y*GRID_TRANSFORM+OFFSET))
+	print(int(dest.x*GRID_TRANSFORM+OFFSET))
+	print(int(dest.y*GRID_TRANSFORM+OFFSET))
 
 	# check source and destination cell  
 	# of the matrix have value 1  
-	if mat[int(src.x*GRID_TRANSFORM)][int(src.y*GRID_TRANSFORM)]!=1 or mat[int(dest.x*GRID_TRANSFORM)][int(dest.y*GRID_TRANSFORM)]!=1: 
+	if mat[int(src.x*GRID_TRANSFORM+OFFSET)][int(src.y*GRID_TRANSFORM+OFFSET)]!=1 or mat[int(dest.x*GRID_TRANSFORM+OFFSET)][int(dest.y*GRID_TRANSFORM+OFFSET)]!=1: 
 		return -1
 	visited = [[False for i in range(COL)] for j in range(ROW)]
 
 	# Mark the source cell as visited  
-	visited[int(src.x*GRID_TRANSFORM)][int(src.y*GRID_TRANSFORM)] = True
+	visited[int(src.x*GRID_TRANSFORM+OFFSET)][int(src.y*GRID_TRANSFORM+OFFSET)] = True
 
 	# Create a queue for BFS  
 	q = deque() 
@@ -118,7 +118,7 @@ def BFS(mat, src: Point, dest: Point):
 			print(curr.pt.y)
 			while path:
 				temp = path.popleft()
-				visit[int(temp.pt.x*GRID_TRANSFORM)][int(temp.pt.y*GRID_TRANSFORM)] = temp
+				visit[int(temp.pt.x*GRID_TRANSFORM+OFFSET)][int(temp.pt.y*GRID_TRANSFORM+OFFSET)] = temp
 
 			while pt.x != src.x or pt.y != src.y:
 
@@ -141,8 +141,8 @@ def BFS(mat, src: Point, dest: Point):
           
 		# Otherwise enqueue its adjacent cells  
 		for i in range(4): 
-			row = int(pt.x*GRID_TRANSFORM) + rowNum[i]
-			col = int(pt.y*GRID_TRANSFORM) + colNum[i] 
+			row = int(pt.x*GRID_TRANSFORM+OFFSET) + rowNum[i]
+			col = int(pt.y*GRID_TRANSFORM+OFFSET) + colNum[i] 
 		      
 			# if adjacent cell is valid, has path   
 			# and not visited yet, enqueue it. 
@@ -159,7 +159,7 @@ def BFS(mat, src: Point, dest: Point):
 time.sleep(2)
 pub = rospy.Publisher('desired_position', Vector3, queue_size=10)
 dest = Point(4+OFFSET, 4+OFFSET) 
-source = Point(float(floor(tag.x)+OFFSET), float(floor(tag.y)+OFFSET))
+source = Point(float(floor(tag.x)), float(floor(tag.y)))
 des_pos = Vector3(dest.x,dest.y,0)
 start = True
 BFS(map1,source,dest)
