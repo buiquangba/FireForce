@@ -120,8 +120,8 @@ def BFS(mat, src: Point, dest: Point):
 			while pt.x != src.x or pt.y != src.y:
 
 				for i in range(4): 
-					row = int(pt.x) + rowNum[i] 
-					col = int(pt.y) + colNum[i] 
+					row = int(pt.x) + rowNum[i] /GRID_TRANSFORM
+					col = int(pt.y) + colNum[i] /GRID_TRANSFORM
 
 				    # if adjacent cell is valid, has path   
 				    # and not visited yet, enqueue it. 
@@ -138,8 +138,8 @@ def BFS(mat, src: Point, dest: Point):
           
 		# Otherwise enqueue its adjacent cells  
 		for i in range(4): 
-			row = int(pt.x*GRID_TRANSFORM) + rowNum[i] 
-			col = int(pt.y*GRID_TRANSFORM) + colNum[i] 
+			row = int(pt.x*GRID_TRANSFORM) + rowNum[i] /GRID_TRANSFORM
+			col = int(pt.y*GRID_TRANSFORM) + colNum[i] /GRID_TRANSFORM
 		      
 			# if adjacent cell is valid, has path   
 			# and not visited yet, enqueue it. 
